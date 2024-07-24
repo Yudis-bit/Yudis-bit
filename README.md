@@ -5,7 +5,7 @@ I am a passionate developer with interests in web development, game development,
 
 ## Skills
 - **Programming Languages**: JavaScript, PHP
-- **Frameworks & Libraries**: React, Node.js, Bootstrap, Tailwind.
+- **Frameworks & Libraries**: Code Igniter, Laravel, React, Node.js, Bootstrap, Tailwind.
 - **Blockchain**: Web3.js, MetaMask
 
 ## Education

@@ -32,8 +32,9 @@ I am a **dedicated Full-Stack Developer** passionate about **Web Development**, 
 A futuristic marketplace powered by **Ethereum** and **smart contracts**. The project includes a **React.js** front-end for seamless interaction and full transaction transparency.
 
 <div align="center">
-  <img src="https://media.giphy.com/media/5ndklThG9vUUdTmgMn/giphy.gif" width="500"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500"/>
 </div>
+
 
 ---
 

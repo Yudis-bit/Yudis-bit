@@ -1,7 +1,7 @@
 # 👨‍💻 **Hello, I'm Yudistira Putra!**
 
 <div align="center">
-  <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" width="750"/>
+  <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" width="550"/>
 </div>
 
 ## 🌟 **About Me**

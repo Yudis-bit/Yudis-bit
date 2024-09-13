@@ -76,5 +76,6 @@ A **real-time chat application** with integrated **MetaMask login** for secure c
 I believe that **continuous learning** and **innovation** are the keys to success in the tech industry. Let's build something amazing together and drive **positive change** through technology!
 
 <div align="center">
-  <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" width="500"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500"/>
 </div>
+

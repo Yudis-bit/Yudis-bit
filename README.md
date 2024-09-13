@@ -1,78 +1,79 @@
-# 🚀 Hello, I'm Yudistira Putra 🚀
+# 🎨 **Yudistira Putra** - Full-Stack Developer | Web3 Enthusiast | Blockchain Wizard
 
-![Welcome Animation](https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif)
-
-## ⚡ About Me
-
-I'm a **Full-Stack Developer** with expertise in **Web3**, **game development**, and **blockchain technology**. I love building cool stuff and pushing technology to its limits! 🌟
+<div align="center">
+  <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" alt="Coding Animation" width="500"/>
+</div>
 
 ---
 
-## 🔥 **Crazy Cool Stats**
+## 🌟 **About Me**
 
-![Crazy GitHub Stats](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Yudis-bit&theme=monokai)
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Yudis-bit&theme=dark&fire=red&ring=green)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&theme=radical)
+I am a **Full-Stack Developer** passionate about creating **interactive web experiences** and **blockchain technology** solutions. My focus is on designing **visually stunning** and **high-performance** applications, blending creativity with cutting-edge technologies.
 
 ---
 
-## 🧩 **Mind-Blowing Animations**
+## ⚡ **Tech Stack**
 
-### **🌪️ Let the Commits Snake Swirl!**
-![Snake Eating Commits](https://github.com/Yudis-bit/Yudis-bit/blob/output/github-contribution-grid-snake.svg)
-
-### **⚡ Real-Time Activity ⚡**
-![Activity Graph](https://activity-graph.herokuapp.com/graph?username=Yudis-bit&theme=react-dark)
-
----
-
-## 🌀 **Let's Animate Everything**
-
-Check out these **cool GIFs** while learning about me!
-
-- 🎮 **Game Development Enthusiast**
-  ![Game Dev Animation](https://media.giphy.com/media/Y4ak9Ki2GZCbJxAnJD/giphy.gif)
-
-- 🌐 **Web3 Wizardry**
-  ![Web3 Animation](https://media.giphy.com/media/fwbZnTftCXVocKzfxR/giphy.gif)
-
-- 🔧 **Building with Solidity**
-  ![Solidity Animation](https://media.giphy.com/media/jTNG3RF6EwbkpD4LZx/giphy.gif)
+<div align="center">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=web3.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node-dot-js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+</div>
 
 ---
 
-## 🛠️ **Skills & Technologies**
+## 🚀 **Featured Projects**
 
-| 🚀 Front-End          | 🖥️ Back-End            | 🔗 Blockchain              | 🛠️ DevOps               |
-|-----------------------|------------------------|----------------------------|-------------------------|
-| React.js, Tailwind CSS | Node.js, Express.js     | Solidity, Web3.js, MetaMask | Git, Docker, CI/CD       |
-| Bootstrap              | PHP, Laravel, CodeIgniter| Smart Contracts            | GitHub Actions, Jenkins  |
+### 1. **3D Crypto Dashboard**
 
----
+A stunning 3D interactive crypto dashboard featuring **real-time data visualization**. Built with **React**, **Three.js**, and **Web3.js**, it showcases live updates of the top 10 cryptocurrencies, complete with custom animations.
 
-## 💻 **Key Projects**
+[View Project](#)
 
-| **Project**                             | **Description**                                                                                                           | **Tech**                        |
-|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| **🛒 [Decentralized Commerce](#)**      | A cutting-edge platform for buying and selling digital products with blockchain technology.                                 | Ethereum, React.js, Solidity    |
-| **🗳️ [E-Voting Blockchain](#)**         | Transparent and secure decentralized voting system using Ethereum smart contracts.                                           | Solidity, Node.js, React.js     |
-| **💬 [Real-Time Chat with MetaMask](#)**| A chat application with MetaMask login for secure communication over the blockchain.                                         | Web3.js, React.js, MetaMask     |
+<div align="center">
+  <img src="https://media.giphy.com/media/H7wajFPnZGdRWaQeu0/giphy.gif" alt="3D Dashboard" width="400"/>
+</div>
 
 ---
 
-## 🎨 **Get In Touch**
+### 2. **E-Voting Blockchain System**
 
-- **Email**: [pyudistira519@gmail.com](mailto:pyudistira519@gmail.com)
+A decentralized voting platform ensuring secure, transparent, and tamper-proof election processes. The project utilizes **Solidity smart contracts**, **React.js**, and **MetaMask** for user authentication.
+
+[View Project](#)
+
+<div align="center">
+  <img src="https://media.giphy.com/media/l0HlJzQn5XG4NPg1a/giphy.gif" alt="Blockchain E-Voting" width="400"/>
+</div>
+
+---
+
+## 💼 **My GitHub Stats**
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Yudis-bit&show_icons=true&theme=radical" alt="GitHub Stats" width="450"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&theme=radical" alt="Top Languages" width="450"/>
+</div>
+
+---
+
+## 🐍 **My GitHub Contribution Snake**
+
+<div align="center">
+  <img src="https://github.com/Yudis-bit/Yudis-bit/blob/output/github-contribution-grid-snake.svg" alt="Snake Eating Contributions" />
+</div>
+
+---
+
+## 🎨 **Let's Get Creative**
+
+- **Website**: [yudistiracodes.com](#)
 - **LinkedIn**: [Yudistira Putra](https://www.linkedin.com/in/yudistira-putra-dev/)
-- **GitHub**: [github.com/Yudis-bit](https://github.com/Yudis-bit)
+- **GitHub**: [Yudis-bit](https://github.com/Yudis-bit)
 
----
-
-## 🌟 **Let's Keep The Party Going!**
-
-![Party GIF](https://media.giphy.com/media/26BRzozg4TCBXv6QU/giphy.gif)
-
-_Want to collaborate or talk tech? Feel free to reach out, let's build something amazing!_
-
+<div align="center">
+  <img src="https://media.giphy.com/media/fwbZnTftCXVocKzfxR/giphy.gif" alt="Coding" width="400"/>
+</div>

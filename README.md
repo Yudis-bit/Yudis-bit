@@ -12,7 +12,7 @@ Hey there! I'm **Yudistira Putra**, a **Full-Stack Developer** with a strong pas
 
 ---
 
-## 🚀 **My Tech**
+## 🚀 **My Tech Stack**
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
@@ -21,6 +21,10 @@ Hey there! I'm **Yudistira Putra**, a **Full-Stack Developer** with a strong pas
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node-dot-js&logoColor=white"/>
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CodeIgniter-EF4223?style=for-the-badge&logo=codeigniter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
 </div>
 
 ---
@@ -28,7 +32,7 @@ Hey there! I'm **Yudistira Putra**, a **Full-Stack Developer** with a strong pas
 ## 💼 **Projects That Push Boundaries**
 
 ### 1. **Decentralized Commerce Platform**
-A futuristic marketplace powered by **Ethereum** and **smart contracts**. The project includes a **React.js** front-end for seamless interaction and full transaction transparency.
+A futuristic marketplace powered by **Polygon** and **smart contracts**. The project includes a **React.js** front-end for seamless interaction and full transaction transparency.
 
 <div align="center">
   <img src="https://media.giphy.com/media/l3vRbsDW8F1zLWnLG/giphy.gif" width="500"/>
@@ -53,7 +57,6 @@ A **real-time chat application** with integrated **MetaMask login** for secure c
 </div>
 
 ---
-
 
 ## 🐍 **Contribution Snake**
 

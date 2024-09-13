@@ -1,7 +1,7 @@
 # 👨‍💻 **Hello, I'm Yudistira Putra!**
 
 <div align="center">
-  <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="600"/>
+  <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" width="1000"/>
 </div>
 
 ## 🌟 **About Me**
@@ -32,7 +32,7 @@ I am a **dedicated Full-Stack Developer** passionate about **Web Development**, 
 A futuristic marketplace powered by **Ethereum** and **smart contracts**. The project includes a **React.js** front-end for seamless interaction and full transaction transparency.
 
 <div align="center">
-  <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="400"/>
+  <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="500"/>
 </div>
 
 ---
@@ -41,7 +41,7 @@ A futuristic marketplace powered by **Ethereum** and **smart contracts**. The pr
 A tamper-proof, decentralized voting system built on **Ethereum** blockchain using **Solidity**. The system ensures **security** and **real-time vote transparency**.
 
 <div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="400"/>
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500"/>
 </div>
 
 ---
@@ -50,7 +50,7 @@ A tamper-proof, decentralized voting system built on **Ethereum** blockchain usi
 A **real-time chat application** with integrated **MetaMask login** for secure communication across blockchain wallets.
 
 <div align="center">
-  <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="400"/>
+  <img src="https://media.giphy.com/media/3oKIPEqDGUULpEU0aQ/giphy.gif" width="500"/>
 </div>
 
 ---
@@ -75,7 +75,5 @@ A **real-time chat application** with integrated **MetaMask login** for secure c
 
 I believe that **continuous learning** and **innovation** are the keys to success in the tech industry. Let's build something amazing together and drive **positive change** through technology!
 
-<div align="center">
-  <img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" width="400"/>
-</div>
+
 

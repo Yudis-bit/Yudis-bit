@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/user-attachments/assets/dd38f8f0-520e-4361-b51e-616142c16f0b" width="800" alt="Header Banner">
-</p>
+
 
 <div align="center">
 
@@ -20,7 +18,6 @@
 My central research initiative focuses on the inevitable convergence of three domains into a single, cohesive metasystem. This model dictates my entire approach to engineering and system design.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/user-attachments/assets/15469ca3-d142-45e0-82a0-4ddf991448dd" width="800" alt="Convergence Diagram">
   <em><br>A conceptual model illustrating the convergence of Physical Actuation (Web4), Artificial Cognition (AI), and Adversarial Dynamics (Quant/Cybersec).</em>
 </p>
 
@@ -66,8 +63,5 @@ My theoretical work is grounded in building tangible artifacts. These probes ser
 | **Disbyte - Trustless Marketplace** | `Web4` `Quant Dynamics`                     | An early study in building a decentralized marketplace on Polygon, serving as a testbed for trustless identity and transaction protocols under adversarial conditions. | `Archived Experiment`   |
 
 ---
-
-
-    <img src="https://img.shields.io/badge/GitHub-Collaborate-000000?style=for-the-badge&logo=github" alt="GitHub">
   </a>
 </p>

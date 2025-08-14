@@ -9,7 +9,7 @@
 
 
 
-> The terminal cognitive limit of humanity has been reached. Our global systems—financial, logistical, informational—have surpassed the scale of human comprehension and manual control. The next evolutionary leap is not about building better applications for humans, but architecting **autonomous metasystems** that can self-regulate, self-optimize, and self-defend at machine speed. My work exists at the nexus of this paradigm shift, forging the foundational protocols for a world where intelligence is a utility and the physical world is an executable layer.
+> The terminal cognitive limit of humanity has been reached. Our global systems financial, logistical, informational have surpassed the scale of human comprehension and manual control. The next evolutionary leap is not about building better applications for humans, but architecting **autonomous metasystems** that can self-regulate, self-optimize, and self-defend at machine speed. My work exists at the nexus of this paradigm shift, forging the foundational protocols for a world where intelligence is a utility and the physical world is an executable layer.
 
 ---
 

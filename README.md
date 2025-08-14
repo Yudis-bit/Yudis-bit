@@ -9,10 +9,7 @@
 
 </div>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/STATUS-Architecting Foundational Protocols-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjIgMTFWM0gydjhoOUc5djJIOVY5SDd2NGg1djJoLTd2LTJoLTJWNWg0djJIMTBWNWg0djJIMTYVNWg0djZoNnptLTYgNnYtMmg0djJoLTZ2LTJoLTJ2Nmgydi0yem0tMi00aC0ydjJoMnYtMnoiPjwvcGF0aD48L3N2Zz4=" alt="Status">
-  <img src="https://img.shields.io/badge/FOCUS-AI | Web4 | Quant-purple?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTIgMmMtNC40MiAwLTggMy41OC04IDhzMy41OCA4IDggOCA4LTMuNTggOC04LT MuNTgtOC04LTgtOHptMCAyYzMuMzEgMCA2IDIuNjkgNiA2IDAgMy4zMi0yLjY5IDYtNiA2UzYgMTMuMzIgNiA5YzAtMy4zMSAyLjY5LTYgNi02ek00IDEyaDJhNCA0IDAgMCAxIDQgNGgtMmE2IDYgMCAwIDAtNi02em0xMC41IDJjLTEuMTYgMC0yLjItLjQyLTMtMS4wOUw5LjUgMTQuMDljLjU1LjgxIDEuNDUgMS4zNiAyLjUgMS4zNnptLTcgMWE0IDQgMCAwIDEgNC00VjdoLTZhNiA2IDAgMCAwIDYgNnptOS01di0yaDZhNiA2IDAgMCAwLTYtNnYyYTQgNCAwIDAgMSA0IDR6bS00LjUgMWMtLjU1LS44MS0xLjQ1LTEuMzYtMi41LTEuMzZoLS4wMWMtMS4xNiAwLTIuMi40Mi0zIDEuMDlMMTAuNSA5LjkyYzEtLjY3IDIuMTgtMS4wOSAzLjUtMS4wOXMyLjUuNDIgMy41IDEuMDlaIj48L3BhdGg+PC9zdmc+">
-</div>
+
 
 > The terminal cognitive limit of humanity has been reached. Our global systems—financial, logistical, informational—have surpassed the scale of human comprehension and manual control. The next evolutionary leap is not about building better applications for humans, but architecting **autonomous metasystems** that can self-regulate, self-optimize, and self-defend at machine speed. My work exists at the nexus of this paradigm shift, forging the foundational protocols for a world where intelligence is a utility and the physical world is an executable layer.
 

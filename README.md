@@ -19,7 +19,7 @@ Cybersecurity enthusiast with a focus on Offensive Security. Passionate about id
 
 👯 **Connect with me & see my progress:**
 
-* **TryHackMe Profile (Top 4%):** [https://tryhackme.com/p/ArkheionX](https://tryhackme.com/p/ArkheionX)
+* **TryHackMe Profile :** [https://tryhackme.com/p/ArkheionX](https://tryhackme.com/p/ArkheionX)
 * **LinkedIn:** [https://www.linkedin.com/in/yudistira-putra-dev/](https://www.linkedin.com/in/yudistira-putra-dev/)
 
 ---

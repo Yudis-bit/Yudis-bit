@@ -1,68 +1,41 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=250&section=header&text=Arkheion-X&fontSize=70&animation=fadeIn&fontAlign=50&fontAlignY=40&desc=Signal%20from%20Noise%20//%20Autonomous%20Entities&descAlign=50&descAlignY=60&descSize=20&fontColor=00ff00" />
-</div>
+# Yudis (Arkheion-X)
 
-### `root@arkheion:~$ ./status_check.sh`
+**Smart Contract Security Researcher | On-Chain Forensics Specialist**
 
-```python
-"""
-IDENTITY: YUDIS (Systems Architect)
-CURRENT STATUS: ONLINE
-OBJECTIVE: HIGH-FIDELITY DATA EXTRACTION
-"""
-
-class Profile(Entity):
-    def __init__(self):
-        self.role      = "Security Researcher & Data Engineer"
-        self.focus     = ["Cryptanalysis", "Algorithmic Efficiency", "DeFi Security"]
-        self.hardware  = "Optimized for Low-Resource Environments"
-        self.mission   = "Building autonomous engines that read chaos and return order."
-
-    def execute(self):
-        return "Decentralized Intelligence."
-```
-
----
----
-
-### The Void Protocol
-
-> *"Chaos is merely unparsed data. I am the parser."*
-
-I do not write code, I **orchestrate entropy**. My operations bypass the UI layer entirely to interface directly with the raw mathematical heartbeat of the blockchain. While others build web apps, I build **Hunter-Killer algorithms** that thrive in low-resource environments and feast on market inefficiencies.
+Focused on deep logic vulnerabilities, mathematical inconsistencies, and state handling in EVM protocols. I specialize in finding high-severity bugs that automated tools miss, including bit-packing overflows, transient storage exploits, and precision loss.
 
 ---
 
-### Cyber-Kinetic Weaponry
+### 🏛️ Track Record & Findings
 
-| **Neural Backbone** | **Entropy Extraction** | **Offensive Operations** |
-| :--- | :--- | :--- |
-| ![Linux](https://img.shields.io/badge/Kernel-Arch_Hardened-black?style=for-the-badge&logo=linux&logoColor=red) | ![BigQuery](https://img.shields.io/badge/Intel-Google_BigQuery-black?style=for-the-badge&logo=google-cloud&logoColor=red) | ![Bitcoin](https://img.shields.io/badge/Target-Bitcoin_Core-black?style=for-the-badge&logo=bitcoin&logoColor=red) |
-| ![Python](https://img.shields.io/badge/Logic-Python_3.11-black?style=for-the-badge&logo=python&logoColor=red) | ![Postgres](https://img.shields.io/badge/Vault-PostgreSQL-black?style=for-the-badge&logo=postgresql&logoColor=red) | ![Cryptography](https://img.shields.io/badge/Math-Elliptic_Curve-black?style=for-the-badge&logo=letsencrypt&logoColor=red) |
-| ![Bash](https://img.shields.io/badge/Shell-Bash_Scripting-black?style=for-the-badge&logo=gnu-bash&logoColor=red) | ![Pandas](https://img.shields.io/badge/Parser-Pandas-black?style=for-the-badge&logo=pandas&logoColor=red) | ![Solidity](https://img.shields.io/badge/Vector-Solidity-black?style=for-the-badge&logo=solidity&logoColor=red) |
-
----
-
-### Classified Directives
-
-| Codename | Class | Status | Mission Profile |
+| Protocol | Severity | Vulnerability Description | Status |
 | :--- | :--- | :--- | :--- |
-| **Arkheion-X** | `Hunter-Killer` | 🟢 **Deployed** | Autonomous entity engineered to hunt arbitrage & liquidation events with zero-latency execution. |
-| **Project: Void** | `Deep_Search` | 🟡 **Scanning** | Brute-force analysis of legacy `secp256k1` signatures to recover lost entropy from the Satoshi Era. |
-| **Stream-Sort** | `Hyper-Pipe` | 🟢 **Stable** | Memory-safe ingestion engine capable of digesting Terabytes of ledger data on minimal hardware. |
+| **Flow Protocol** | `CRITICAL` | **Double Spend** via Missing Atomic Rollback in EVM Handler | 🟢 Confirmed |
+| **BitMart Exchange** | `HIGH` | **Forensics:** Recovered **$300k+** in Compromised/Dormant Assets | 🟢 Confirmed |
+| **Layer3** | `HIGH` | **Yield Drainage** via Re-entrancy (100% Fund Loss) | 🟢 Confirmed |
+| **NAVI Protocol** | `HIGH` | **Principal Theft** via Double-Harvesting Logic | 🟢 Confirmed |
+| **Swafe** | `LOW` | Permanent Backup Destruction via Unconditional Overwrite | 🟢 Confirmed |
+| **VII Finance** | `PENDING` | Precision Loss in Collateral Seizure leading to Bad Debt | 🟡 In Review |
 
 ---
 
-### Signal Telemetry
+### 🛠️ Technical Focus
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Yudis-bit&show_icons=true&theme=gotham&hide_border=true&bg_color=000000&title_color=ff0000&icon_color=ff0000&text_color=00ff00&count_private=true" height="150" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&theme=gotham&hide_border=true&bg_color=000000&title_color=ff0000&text_color=00ff00" height="150" />
-</div>
+* **Core:** Solidity, EVM Internals, Yul/Assembly.
+* **Testing:** Foundry (Fuzzing & Invariant Testing), Echidna.
+* **Specialization:**
+    * DeFi Primitives (Lending, AMM, Perps).
+    * Math & Rounding Errors.
+    * Access Control & State Management.
+    * On-Chain Forensics & Asset Recovery.
 
 ---
 
-<div align="center">
-  <p><i>NO LOGS. NO MASTERS. ENCRYPTED COMMS ONLY.</i></p>
-  <img src="https://komarev.com/ghpvc/?username=Yudis-bit&style=flat-square&color=ff0000&label=THREAT+LEVEL" alt="Profile Views" />
-</div>
+### 📊 Activity
+
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api?username=Yudis-bit&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=999&icon_color=58a6ff&count_private=true" height="150" alt="stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=999" height="150" alt="languages" />
+</p>
+
+[**View HackenProof Profile**](https://hackenproof.com) • [**View Sherlock Profile**](https://sherlock.xyz)

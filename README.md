@@ -21,10 +21,3 @@ I'm a developer exploring the intersection of systems programming, decentralized
 
 ---
 
-<details>
-<summary>GitHub statistics (click to expand)</summary>
-
-![Yudis's GitHub stats](https://github-readme-stats.vercel.app/api?username=Yudis-bit&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117)
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&theme=dark&hide_border=true&bg_color=0d1117)
-
-</details>

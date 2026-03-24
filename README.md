@@ -1,23 +1,22 @@
-## Yudis – Developer focused on Rust, Blockchain & Security
+# Yudistira Putra
 
-I'm a developer exploring the intersection of systems programming, decentralized protocols, and smart contract security. My repositories reflect my learning process and side projects.
+Security Researcher specializing in EVM and SVM architecture. 
 
-**Current focus**
-- Learning Rust (ownership, lifetimes, and fighting the borrow checker)
-- Understanding smart contract vulnerabilities (re-entrancy, math precision, access control)
-- Building small tools to experiment with Web3 and DePIN concepts
+I audit protocols, break execution logic, and develop Proof-of-Concept exploits. With extensive experience across major audit platforms, my focus is on identifying deep-seated architectural flaws that automated tooling misses.
 
-**Projects I maintain**
-- [Arkheion-X](link) – experimental framework for autonomous digital entities
-- [Cognitive-Routing-Protocol](link) – routing protocol for DePIN networks
-- [web3commerce](link) – simple marketplace with MetaMask login and Polygon integration
-- [wallet_chat](link) – chat app using Ethereum wallets for authentication
-- [e-voting-blockchain](link) – decentralized voting system (React + Node + smart contracts)
+### Core Security Research
+- **Ethereum Virtual Machine (EVM):** State transition dynamics, memory/storage management, and Yul-level optimization.
+- **Solana Virtual Machine (SVM):** Account model security, PDA validation, and Rust-based Anchor framework auditing.
+- **Protocol Analysis:** Deep-dive research into Bitcoin/Ethereum whitepapers and decentralized system fundamentals.
+- **Vulnerability Vectors:** Proxy bypasses (UUPS/Diamond), cross-contract state manipulation, and privilege escalation.
 
-**Find me elsewhere**
-- Discord : @arkheionx
-- Telegram: @arkheionx
-- Email: pyudistira519@gmail.com
+### Public Research & Lab
+- **evm-exploit-lab:** A collection of PoC scripts for context preservation and delegatecall vulnerabilities.
+- **applied-audit-findings:** Technical breakdowns of complex logic errors and invariant failures.
+
+### Stack & Tooling
+- **EVM:** Solidity, Yul, Foundry, Slither, Echidna, Halmos.
+- **SVM:** Rust, Anchor, Solana CLI, Trident.
 
 ---
-
+[LinkedIn](https://www.linkedin.com/in/yudistira-putra-dev)

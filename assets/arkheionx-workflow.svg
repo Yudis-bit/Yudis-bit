@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Arkheionx workflow: install/arkup, doctor, demo, open, map/flow, hunt, prove/trace, evidence, report, validate, human review.">
+  <defs>
+    <linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#101b30"/>
+    </linearGradient>
+    <marker id="wa" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 z" fill="#6a87b3"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="360" rx="14" fill="url(#wbg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="14" fill="none" stroke="#243149"/>
+  <text x="40" y="42" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#e8eef7">Arkheionx — local research workflow</text>
+  <text x="40" y="64" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7d8ea8">Foundry proves behavior. Arkheionx maps, ranks, proves, packages, and explains the evidence — locally.</text>
+
+  <!-- Row 1 connectors -->
+  <g stroke="#6a87b3" stroke-width="1.8" fill="none">
+    <path d="M208 136 H222" marker-end="url(#wa)"/>
+    <path d="M396 136 H410" marker-end="url(#wa)"/>
+    <path d="M584 136 H598" marker-end="url(#wa)"/>
+    <path d="M772 136 H786" marker-end="url(#wa)"/>
+    <path d="M960 136 H974" marker-end="url(#wa)"/>
+    <!-- wrap from hunt down to prove/trace -->
+    <path d="M1062 162 V196 a8 8 0 0 1 -8 8 H1070 a8 8 0 0 0 -8 8 V250" marker-end="url(#wa)"/>
+    <!-- Row 2 connectors (right to left) -->
+    <path d="M980 276 H966" marker-end="url(#wa)"/>
+    <path d="M792 276 H778" marker-end="url(#wa)"/>
+    <path d="M604 276 H590" marker-end="url(#wa)"/>
+    <path d="M416 276 H402" marker-end="url(#wa)"/>
+  </g>
+
+  <!-- Row 1 nodes -->
+  <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <g>
+      <rect x="40" y="110" width="168" height="52" rx="9" fill="#14223c" stroke="#6cb6ff" stroke-width="1.4"/>
+      <text x="124" y="135" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">install / arkup</text>
+      <text x="124" y="152" font-size="10.5" fill="#7d8ea8" text-anchor="middle">set up &amp; update</text>
+    </g>
+    <g>
+      <rect x="228" y="110" width="168" height="52" rx="9" fill="#14223c" stroke="#6cb6ff" stroke-width="1.4"/>
+      <text x="312" y="135" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">doctor</text>
+      <text x="312" y="152" font-size="10.5" fill="#7d8ea8" text-anchor="middle">check environment</text>
+    </g>
+    <g>
+      <rect x="416" y="110" width="168" height="52" rx="9" fill="#14223c" stroke="#56d4bc" stroke-width="1.4"/>
+      <text x="500" y="135" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">demo</text>
+      <text x="500" y="152" font-size="10.5" fill="#7d8ea8" text-anchor="middle">guided fixtures</text>
+    </g>
+    <g>
+      <rect x="604" y="110" width="168" height="52" rx="9" fill="#14223c" stroke="#56d4bc" stroke-width="1.4"/>
+      <text x="688" y="135" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">open</text>
+      <text x="688" y="152" font-size="10.5" fill="#7d8ea8" text-anchor="middle">orient project</text>
+    </g>
+    <g>
+      <rect x="792" y="110" width="168" height="52" rx="9" fill="#14223c" stroke="#6cb6ff" stroke-width="1.4"/>
+      <text x="876" y="135" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">map / flow</text>
+      <text x="876" y="152" font-size="10.5" fill="#7d8ea8" text-anchor="middle">protocol &amp; value flow</text>
+    </g>
+    <g>
+      <rect x="980" y="110" width="168" height="52" rx="9" fill="#14223c" stroke="#6cb6ff" stroke-width="1.4"/>
+      <text x="1064" y="135" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">hunt</text>
+      <text x="1064" y="152" font-size="10.5" fill="#7d8ea8" text-anchor="middle">rank review targets</text>
+    </g>
+  </g>
+
+  <!-- Row 2 nodes -->
+  <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <g>
+      <rect x="980" y="250" width="168" height="52" rx="9" fill="#14223c" stroke="#d8a657" stroke-width="1.4"/>
+      <text x="1064" y="275" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">prove / trace</text>
+      <text x="1064" y="292" font-size="10.5" fill="#7d8ea8" text-anchor="middle">local Foundry proof</text>
+    </g>
+    <g>
+      <rect x="792" y="250" width="168" height="52" rx="9" fill="#14223c" stroke="#57ab5a" stroke-width="1.4"/>
+      <text x="876" y="275" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">evidence</text>
+      <text x="876" y="292" font-size="10.5" fill="#7d8ea8" text-anchor="middle">package artifacts</text>
+    </g>
+    <g>
+      <rect x="604" y="250" width="168" height="52" rx="9" fill="#14223c" stroke="#57ab5a" stroke-width="1.4"/>
+      <text x="688" y="275" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">report</text>
+      <text x="688" y="292" font-size="10.5" fill="#7d8ea8" text-anchor="middle">responsible draft</text>
+    </g>
+    <g>
+      <rect x="416" y="250" width="168" height="52" rx="9" fill="#14223c" stroke="#56d4bc" stroke-width="1.4"/>
+      <text x="500" y="275" font-size="14" font-weight="600" fill="#dce7f5" text-anchor="middle">validate</text>
+      <text x="500" y="292" font-size="10.5" fill="#7d8ea8" text-anchor="middle">check artifacts</text>
+    </g>
+    <g>
+      <rect x="228" y="250" width="168" height="52" rx="9" fill="#172e2a" stroke="#57ab5a" stroke-width="2"/>
+      <text x="312" y="275" font-size="14" font-weight="700" fill="#e8f3ea" text-anchor="middle">human review</text>
+      <text x="312" y="292" font-size="10.5" fill="#9cc79e" text-anchor="middle">required final step</text>
+    </g>
+  </g>
+</svg>

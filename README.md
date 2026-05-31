@@ -1,99 +1,146 @@
 <div align="center">
-  <h1>Yudistira Putra</h1>
-  <p><b>Smart Contract Security Researcher · EVM / SVM / MoveVM</b></p>
-  <p><i>Manual, opcode-level analysis. Deterministic PoCs. Invariant-driven validation.</i></p>
-
-  <p>
-    <a href="https://github.com/Yudis-bit"><img src="https://img.shields.io/badge/GitHub-Yudis--bit-181717?style=flat-square&logo=github" /></a>
-    <a href="https://www.linkedin.com/in/yudistira-putra-dev/"><img src="https://img.shields.io/badge/LinkedIn-yudistira--putra--dev-0A66C2?style=flat-square&logo=linkedin" /></a>
-    <img src="https://img.shields.io/badge/Foundry-Invariant_Fuzzing-ff6633?style=flat-square" />
-    <img src="https://img.shields.io/badge/Halmos-Formal_Verification-7c3aed?style=flat-square" />
-  </p>
+  <img src="./assets/profile-hero.svg" alt="Yudistira Putra — Smart Contract Security Researcher" width="100%" />
 </div>
 
+<h1 align="center">Yudistira Putra</h1>
+
+<p align="center">
+  <b>Smart Contract Security Researcher</b><br/>
+  EVM · SVM · MoveVM · DeFi Protocol Security · Builder of Arkheionx v3.0.0
+</p>
+
+<p align="center"><i>Manual, opcode-level analysis. Deterministic PoCs. Invariant-driven validation.</i></p>
+
+<p align="center">
+  <a href="https://github.com/Yudis-bit"><img src="https://img.shields.io/badge/GitHub-Yudis--bit-1f2328?logo=github&logoColor=white" alt="GitHub: Yudis-bit" /></a>
+  <a href="https://www.linkedin.com/in/yudistira-putra-dev/"><img src="https://img.shields.io/badge/LinkedIn-yudistira--putra--dev-0a66c2?logo=linkedin&logoColor=white" alt="LinkedIn: yudistira-putra-dev" /></a>
+  <a href="https://github.com/Yudis-bit/DeFi-Exploit-PoCs/releases/tag/v3.0.0"><img src="https://img.shields.io/badge/Arkheionx-v3.0.0-3fb950" alt="Arkheionx v3.0.0" /></a>
+  <img src="https://img.shields.io/badge/Focus-DeFi_Security-6cb6ff" alt="DeFi Security" />
+  <img src="https://img.shields.io/badge/Workflow-Local--first-8957e5" alt="Local-first" />
+  <img src="https://img.shields.io/badge/Foundry-compatible-d8a657" alt="Foundry-compatible" />
+</p>
+
 ---
 
-## What I Do
+## What I do
 
-I work on three classes of problems: (1) re-engineering historical DeFi exploits as deterministic, assertion-hardened PoCs that survive regression; (2) auditing live protocols at the state-transition and account-model level — EVM, Solana/Anchor, and Move; (3) building executable enforcement layers where governance and human review are not enough. The common thread is treating security as a property to be proven, not asserted — through invariants, hard assertions, and reproducible traces rather than surface-level checks.
+I work on protocol-level security: how value enters, moves through, and leaves a system, and which state transitions can break the assumptions a protocol depends on. The approach is evidence-first — invariants and hard assertions instead of surface-level checks, deterministic proofs of concept instead of screenshots, and reproducible execution traces instead of narrative.
+
+Most of my work sits at the boundary between reading a protocol and proving something about it: re-engineering historical DeFi exploits as assertion-hardened PoCs, reviewing live protocols at the state-transition and account-model level across EVM, Solana/Anchor, and Move, and turning findings into reports a reviewer can actually reproduce and follow.
+
+- Protocol mapping and value-flow analysis
+- Invariant reasoning and assertion-hardened PoCs
+- Local Foundry proof and execution-trace support
+- Evidence-backed, reviewer-readable vulnerability reports
 
 ---
 
-## Research Archive — Arkheionx Vault
+## Arkheionx — v3.0.0 (Public Stable Launch)
 
-[`Yudis-bit/DeFi-Exploit-PoCs`](https://github.com/Yudis-bit/DeFi-Exploit-PoCs) — independent archive of historical DeFi exploits, re-engineered with reproducibility, assertion quality, and root-cause analysis as first-class concerns. Every entry is gated through a maturity model so that "a PoC exists" is not the same claim as "a PoC is verified."
+[`Yudis-bit/DeFi-Exploit-PoCs`](https://github.com/Yudis-bit/DeFi-Exploit-PoCs) is a Foundry-style local security workbench for DeFi protocol research. It turns a codebase you own or are authorized to review into a repeatable local workflow: a protocol map, a money-flow graph, a ranked review plan, a local Foundry proof path, and trace summaries, evidence packages, and responsible report drafts.
 
-**Maturity model (L0 → L5):** raw replay → structured metadata → assertion-hardened → public-RPC smoke-tested → archival-verified → research-grade case study. Promotion between levels is gated by [`scripts/poc_maturity_index.py`](https://github.com/Yudis-bit/DeFi-Exploit-PoCs/blob/main/scripts/poc_maturity_index.py), not by self-attestation.
+> Foundry proves behavior. Arkheionx helps researchers understand, prioritize, package, and explain the evidence — locally, with no RPC and no secrets.
 
-**Current corpus** ([`reports/research_dashboard.md`](https://github.com/Yudis-bit/DeFi-Exploit-PoCs/blob/main/reports/research_dashboard.md)):
+<div align="center">
+  <img src="./assets/arkheionx-workflow.svg" alt="Arkheionx workflow: install/arkup, doctor, demo, open, map/flow, hunt, prove/trace, evidence, report, validate, human review" width="100%" />
+</div>
 
-| Metric | Value |
-|---|---|
-| Total PoCs | 18 |
-| Assertion-hardened (medium / strong) | 11 |
-| Maturity distribution | L1: 7 · L2: 10 · L3: 1 |
-| Severity coverage | Critical: 10 · High: 8 |
-| Categories represented | 11 (access-control, AMM-invariant, flash-loan price manipulation, reentrancy, oracle manipulation, governance, initialization, accounting mismatch, arithmetic precision, invariant bypass, unsafe external call) |
-| Public-RPC smoke attempted | 2 |
+**Core capabilities**
 
-Sample entries: Parity Multisig (2017), SpankChain (2018), BeautyChain (2018), Bancor (2020), Uniswap V1 reentrancy (2020), Harvest Finance (2020), Yearn v1 DAI (2021), SushiSwap (2021), Indexed Finance (2021), Moonwell (2025), yETH (2025).
+- **Protocol mapping** — roles, journeys, and where value is controlled
+- **Value-flow review** — money-flow graph as JSON and Mermaid
+- **Review-target ranking** — high-signal surfaces instead of guessing
+- **Proof / trace workflow** — targeted local Foundry proofs and compact trace summaries
+- **Evidence package** — structured proof and trace artifacts with explicit evidence levels
+- **Responsible report draft** — local drafts labelled for human review
+- **Artifact validation** — required-field and safe-transition checks on generated artifacts
+- **Local-first install / update lifecycle** — `install.sh`, `arkup`, `uninstall.sh`
+- **Guided demo fixtures** — `oracle-staking`, `amm-swap`, `lending-vault` (toy fixtures, not real protocols)
+- **Professional CLI output** — restrained, TTY-gated color; JSON and files stay plain
 
-The repository is structured for three execution targets: EVM (Foundry, active), SVM (Anchor scaffold), MoveVM (Aptos scaffold). CI enforces metadata schema validation, EVM compilation, and dashboard regeneration.
+Evidence levels stay explicit: `HEURISTIC → COMPILER_CONFIRMED → EXECUTION_CONFIRMED → EVIDENCE_READY`, with human review as the final, required step.
+
+**Safety boundaries** — No RPC by default · no private keys or secrets · no live-chain mutation · no automated exploitation · human review required. Arkheionx is not an audit and does not promise vulnerability discovery, severity, or bounty eligibility.
+
+---
+
+## Technical focus
+
+<div align="center">
+  <img src="./assets/security-focus-map.svg" alt="Security focus map: EVM, SVM, and MoveVM" width="100%" />
+</div>
+
+- **EVM (Ethereum & L2s)** — Solidity and Yul, state-transition reasoning, proxy and upgrade-path review, oracle and DeFi accounting, invariant fuzzing.
+- **SVM (Solana)** — account-model validation, PDA authority and seed derivation, CPI ordering, Anchor-based audit workflow.
+- **MoveVM (Sui & Aptos)** — resource safety, capabilities and abilities, module publishing, arithmetic precision and invariants.
 
 ---
 
 ## Validated Findings
 
-External findings on live, in-scope bug bounty programs. Listed without disclosure of payout details.
+External findings on live, in-scope programs, validated by the protocol teams. Listed without payout or severity details.
 
-- **Variational — Oracle Registry Bypass.** State-transition flaw in oracle registration logic permitting registry assumptions to be bypassed under specific call paths. Validated by the protocol team.
-- **Hyperbridge — GET Timeout Prefix Mismatch.** Inconsistency between encoded request prefix and timeout-handler prefix on GET requests, breaking the symmetry the timeout path relied on. Validated by the protocol team.
-
----
-
-## Technical Range
-
-**EVM (Ethereum & L2s)**
-- State transition dynamics; pre/post-condition reasoning at the storage-slot level
-- Yul / opcode-level analysis; gas-refund and delegatecall abuse
-- Proxy patterns: UUPS, Transparent, Diamond — initialization and upgrade-path bypasses
-- Cross-contract state manipulation, callback-driven invariant violation
-- Invariant fuzzing campaigns (Foundry, Echidna, Medusa); symbolic execution (Halmos)
-
-**SVM (Solana)**
-- Account-model validation: missing signer / owner / discriminator checks
-- PDA derivation security; seed-collision and authority confusion
-- CPI instruction ordering, re-entry through cross-program invocation
-- Anchor-based audit workflow; Trident fuzzing
-
-**MoveVM (Sui / Aptos)**
-- Resource safety invariants; ability-graph reasoning (`key`, `store`, `copy`, `drop`)
-- Integer truncation and arithmetic precision in liquidity math
-- Type-reflection and generic-instantiation exploits
-- Module-publishing and capability-leak patterns
+- **Variational — Oracle Registry Bypass.** State-transition flaw in oracle registration logic that allowed registry assumptions to be bypassed under specific call paths.
+- **Hyperbridge — GET Timeout Prefix Mismatch.** Inconsistency between the encoded request prefix and the timeout-handler prefix on GET requests, breaking the symmetry the timeout path relied on.
 
 ---
 
-## Tools & Infrastructure
+## How I work
 
-- **Languages:** Solidity, Yul, Rust (Anchor), Move, Python, Bash
-- **Frameworks:** Foundry, Hardhat, Solana CLI, Anchor, Sui CLI, Aptos CLI
-- **Security:** Echidna, Halmos (FV), Medusa, Slither, Trident
-- **CI/CD:** GitHub Actions for metadata schema validation, EVM compilation, and dashboard regeneration
+<div align="center">
+  <img src="./assets/evidence-principle.svg" alt="Research principle: invariant, state transition, proof/trace, evidence, responsible report" width="100%" />
+</div>
+
+- **Evidence over claims** — proofs and traces, not assertions.
+- **Reviewer-readable reports** — a reviewer can reproduce the steps and follow the path.
+- **Invariant framing** — state what must always hold, then test against it.
+- **Reproducibility** — deterministic, local artifacts that survive regression.
+- **Proof / trace support** — Foundry execution backs the writeup where it can.
+- **Responsible boundaries** — authorized scope only; human review is the final word.
 
 ---
 
-## Other Projects
+## Tools
 
-- **[`arkheoinx`](https://github.com/Yudis-bit/arkheoinx)** — Deterministic EVM execution firewall for Safe treasuries. Immutable `ArkheionxGuard` / `ArkheionxModuleGuard` cores with timelocked `PolicyRegistry` and `AdapterRegistry` adapters bound by codehash pinning. Foundry invariant suite survived 512,000+ adversarial calls with zero ghost violations against guard removal, module mutation, owner mutation, fallback handler mutation, unlimited approvals, delegatecall, gas-refund abuse, and value drains.
+| Area              | Tools                                  |
+| ----------------- | -------------------------------------- |
+| EVM               | Solidity, Yul, Foundry, Hardhat        |
+| Fuzzing / Formal  | Echidna, Medusa, Halmos                |
+| Static Analysis   | Slither, custom Python tooling         |
+| SVM               | Rust, Anchor, Solana CLI               |
+| MoveVM            | Move, Sui CLI, Aptos CLI               |
+| Infrastructure    | Python, Bash, GitHub Actions           |
+| Research Workflow | traces, invariants, artifacts, reports |
 
-- **[`Cognitive-Routing-Protocol`](https://github.com/Yudis-bit/Cognitive-Routing-Protocol)** — Prototype routing protocol for DePIN networks combining a reinforcement-learning simulator (Python) with on-chain trust and incentive primitives (Solidity). Comparative simulation showed ~22% lower average latency on successful packet deliveries against the baseline, with the cognitive router using a congested link <0.1% of the time.
+---
+
+## Featured projects
+
+| Project | What it is |
+| ------- | ---------- |
+| **[Arkheionx](https://github.com/Yudis-bit/DeFi-Exploit-PoCs)** | Local DeFi security workbench — protocol mapping, value-flow analysis, proof/trace evidence, and report drafting. Stable at v3.0.0. |
+| **[Arkheionx Guard](https://github.com/Yudis-bit/arkheoinx)** | Deterministic EVM execution firewall for Safe treasuries: an immutable guard core with timelocked policy and adapter registries bound by codehash pinning. Its Foundry invariant suite survived 512,000+ adversarial calls with zero ghost violations. |
+| **[Cognitive Routing Protocol](https://github.com/Yudis-bit/Cognitive-Routing-Protocol)** | Prototype routing protocol for DePIN networks: a reinforcement-learning simulator (Python) with on-chain trust and incentive primitives (Solidity). Comparative simulation showed ~22% lower average latency on successful deliveries. |
+
+---
+
+## Current direction
+
+- Post-v3 Arkheionx work (`v3.1.0`) — incremental workbench improvements after the stable cut.
+- Local-first evidence workflows that keep findings honest about their evidence level.
+- Deeper protocol understanding: clearer maps, better value-flow signal.
+- Reusable review patterns that travel across protocols and execution environments.
+- Research that stays reproducible and useful to the reviewer reading it.
 
 ---
 
 ## Contact
 
-- LinkedIn — [`yudistira-putra-dev`](https://www.linkedin.com/in/yudistira-putra-dev/)
-- GitHub — [`Yudis-bit`](https://github.com/Yudis-bit)
+- **LinkedIn** — [yudistira-putra-dev](https://www.linkedin.com/in/yudistira-putra-dev/)
+- **GitHub** — [Yudis-bit](https://github.com/Yudis-bit)
 
-Open to: protocol audit engagements, bug bounty collaboration, security research roles.
+Open to: protocol security research, audit collaboration, bug bounty collaboration, DeFi security tooling, and smart contract security roles.
+
+---
+
+<p align="center"><i>"Security research should be reproducible, evidence-backed, and honest about its limits."</i></p>

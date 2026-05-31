@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Yudistira Putra — Smart Contract Security Researcher. EVM, SVM, MoveVM, DeFi Security.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111d33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6cb6ff"/>
+      <stop offset="1" stop-color="#56d4bc"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="340" rx="14" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="339" rx="14" fill="none" stroke="#243149" stroke-width="1"/>
+  <rect x="40" y="58" width="5" height="190" rx="2.5" fill="url(#accent)"/>
+
+  <!-- protocol graph motif (top right, subtle) -->
+  <g stroke="#3a5680" stroke-width="1.4" fill="none" opacity="0.55">
+    <line x1="880" y1="78" x2="980" y2="58"/>
+    <line x1="980" y1="58" x2="1086" y2="86"/>
+    <line x1="880" y1="78" x2="930" y2="138"/>
+    <line x1="930" y1="138" x2="1030" y2="150"/>
+    <line x1="1030" y1="150" x2="1086" y2="86"/>
+    <line x1="980" y1="58" x2="930" y2="138"/>
+  </g>
+  <g opacity="0.85">
+    <circle cx="880" cy="78" r="6" fill="#6cb6ff"/>
+    <circle cx="980" cy="58" r="6" fill="#56d4bc"/>
+    <circle cx="1086" cy="86" r="6" fill="#6cb6ff"/>
+    <circle cx="930" cy="138" r="6" fill="#56d4bc"/>
+    <circle cx="1030" cy="150" r="6" fill="#6cb6ff"/>
+  </g>
+
+  <!-- evidence flow motif (lower right, subtle) -->
+  <g opacity="0.7">
+    <rect x="872" y="232" width="58" height="26" rx="5" fill="#16243c" stroke="#34507a"/>
+    <rect x="954" y="232" width="58" height="26" rx="5" fill="#16243c" stroke="#34507a"/>
+    <rect x="1036" y="232" width="58" height="26" rx="5" fill="#16243c" stroke="#34507a"/>
+    <path d="M930 245 h22" stroke="#56d4bc" stroke-width="1.6" marker-end="url(#hx)"/>
+    <path d="M1012 245 h22" stroke="#56d4bc" stroke-width="1.6" marker-end="url(#hx)"/>
+    <text x="901" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#8fa6c4" text-anchor="middle">map</text>
+    <text x="983" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#8fa6c4" text-anchor="middle">prove</text>
+    <text x="1065" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#8fa6c4" text-anchor="middle">evidence</text>
+  </g>
+  <defs>
+    <marker id="hx" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 z" fill="#56d4bc"/>
+    </marker>
+  </defs>
+
+  <!-- text block -->
+  <text x="70" y="112" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="700" fill="#e8eef7">Yudistira Putra</text>
+  <text x="72" y="152" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#6cb6ff">Smart Contract Security Researcher</text>
+  <text x="72" y="192" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#9db4d0">EVM · SVM · MoveVM · DeFi Protocol Security</text>
+  <text x="72" y="224" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7d8ea8">Manual analysis · Deterministic PoCs · Invariant-driven validation</text>
+
+  <!-- terminal / workbench motif -->
+  <g>
+    <rect x="72" y="252" width="330" height="46" rx="7" fill="#0e1830" stroke="#2c3e5e"/>
+    <circle cx="88" cy="262" r="3" fill="#e06c75"/>
+    <circle cx="100" cy="262" r="3" fill="#d8a657"/>
+    <circle cx="112" cy="262" r="3" fill="#56d4bc"/>
+    <text x="84" y="288" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#8fa6c4"><tspan fill="#56d4bc">$</tspan> arkheionx prove --run &amp; trace</text>
+  </g>
+</svg>

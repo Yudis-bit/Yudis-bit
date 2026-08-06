@@ -11,7 +11,10 @@ Systems software and correctness engineer focused on reproducible debugging, C/C
 | Project | Problem | Contribution | Status | Evidence |
 |:---|:---|:---|:---:|:---|
 | **Khronos Vulkan Validation Layers** | Out-of-bounds crash in static descriptor validation | 6-line fix + 64-line C++ regression test | **MERGED** | [PR #12743](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) |
-| **LLVM** | TFE/LWE image loads entering SILoadStoreOptimizer merge candidates | 10-line guard + 35-line MIR regression | **APPROVED, NOT MERGED** | [PR #210583](https://github.com/llvm/llvm-project/pull/210583) |
+| **LLVM (AMDGPU)** | TFE/LWE image loads entering SILoadStoreOptimizer merge candidates | 10-line guard + 35-line MIR regression | **APPROVED, NOT MERGED** | [PR #210583](https://github.com/llvm/llvm-project/pull/210583) |
+| **Valkey** | NULL dereference in event-loop timer handling | 1-line guard + regression test (verified fail-before/pass-after) | **OPEN** | [PR #4353](https://github.com/valkey-io/valkey/pull/4353) |
+| **OpenSBI (RISC-V)** | Unbounded copy into fixed firmware queue-name buffer | Length clamp + null termination | **OPEN** | [PR #423](https://github.com/riscv-software-src/opensbi/pull/423) |
+| **MicroPython** | Integer overflow in framebuffer pixel-index arithmetic on 16-bit int targets | 12 `size_t` casts in offset calculations | **OPEN** | [PR #19586](https://github.com/micropython/micropython/pull/19586) |
 | **Linux** | Two comment typos in ftrace samples and tracing docs | Typo corrections | **MERGED** | [e5d8524](https://github.com/torvalds/linux/commit/e5d8524), [8a66c09](https://github.com/torvalds/linux/commit/8a66c09) |
 | **bitcoin-core/secp256k1** | Missing constant-time test coverage for schnorrsig_sign_custom | Test-only `ctime_tests.c` extension | **UNDER REVIEW** | [PR #1893](https://github.com/bitcoin-core/secp256k1/pull/1893) |
 
@@ -21,7 +24,7 @@ Systems software and correctness engineer focused on reproducible debugging, C/C
 
 ### [ecc-audit-engine](https://github.com/Yudis-bit/ecc-audit-engine)
 Independent secp256k1 differential-testing research engine. Deterministic corpus, synthetic corrupted targets, failure minimization, replay, and structured reporting. 30 tests, 3 releases, active CI.
-- [v0.2.1 release](https://github.com/Yudis-bit/ecc-audit-engine/releases/latest)
+- [v0.2.2 release](https://github.com/Yudis-bit/ecc-audit-engine/releases/latest)
 - [Quick demo](https://github.com/Yudis-bit/ecc-audit-engine/blob/main/examples/quick-demo.sh)
 
 ### [arkheionx](https://github.com/Yudis-bit/arkheionx)

@@ -2,10 +2,15 @@
 
 Systems Software Engineer
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=700&lines=C+%2F+C%2B%2B+%2F+Rust+Systems;Compiler+%26+GPU+Validation;Virtualization+%26+x86;RISC-V+Firmware;Cryptographic+Correctness;Reproducible+Debugging" alt="Systems Engineering Focus" /><br>Correctness-focused systems engineer working across
+<img
+src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=19&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&repeat=true&width=760&lines=C+%2F+C%2B%2B+%2F+Rust+Systems;Compiler+%26+GPU+Validation;Virtualization+%26+x86;RISC-V+Firmware;Cryptographic+Correctness;Reproducible+Debugging"
+alt="Systems Engineering Focus"
+/>
+
+<br/>Correctness-focused systems engineer working across
 compilers · GPU validation · virtualization · firmware · cryptographic software
 
-<br>""Email" (https://img.shields.io/badge/Email-pyudistira519%40gmail.com-24292f?style=for-the-badge&logo=gmail&logoColor=white)" (mailto:pyudistira519@gmail.com)
+<br/>""Email" (https://img.shields.io/badge/Email-Contact-24292f?style=for-the-badge&logo=gmail&logoColor=white)" (mailto:pyudistira519@gmail.com)
 ""LinkedIn" (https://img.shields.io/badge/LinkedIn-Yudistira_Putra-24292f?style=for-the-badge&logo=linkedin&logoColor=white)" (https://www.linkedin.com/in/yudistira-putra-dev/)
 ""GitHub" (https://img.shields.io/badge/GitHub-Yudis--bit-24292f?style=for-the-badge&logo=github&logoColor=white)" (https://github.com/Yudis-bit)
 
@@ -13,19 +18,19 @@ compilers · GPU validation · virtualization · firmware · cryptographic softw
 
 "> whoami"
 
-I work on correctness-critical systems software, with an emphasis on isolating hard-to-reproduce failures, understanding root causes, building regression coverage, and upstreaming narrowly scoped fixes.
+I work on correctness-critical systems software, with an emphasis on reproducing difficult failures, understanding root causes, building regression coverage, and contributing narrowly scoped fixes upstream.
 
-My current work spans C, C++, and Rust across compiler backends, GPU/graphics validation, virtualization, RISC-V firmware, and cryptographic testing infrastructure.
+My current work spans C, C++, and Rust across compiler backends, GPU and graphics validation, virtualization, RISC-V firmware, and cryptographic testing infrastructure.
 
 $ focus
 
-  systems correctness
-  reproducible debugging
-  compiler behavior
-  GPU validation
-  virtualization / x86
-  firmware safety
-  cryptographic testing
+systems correctness
+reproducible debugging
+compiler behavior
+GPU validation
+virtualization / x86
+firmware safety
+cryptographic testing
 
 ---
 
@@ -37,7 +42,7 @@ Selected Upstream Engineering
 <tr>
 <td width="50%" valign="top">Khronos · Vulkan Validation Layers
 
-GPU / Validation · C++
+GPU Validation · C++
 
 Static descriptor validation could reach an out-of-bounds access path and crash.
 
@@ -50,7 +55,7 @@ Contribution
 
 Status: "MERGED ✓"
 
-"View PR #12743 →" (https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743)
+"PR #12743 →" (https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743)
 
 </td><td width="50%" valign="top">LLVM · AMDGPU
 
@@ -61,32 +66,32 @@ TFE/LWE image loads could incorrectly enter "SILoadStoreOptimizer" merge candida
 Contribution
 
 - Correctness guard
-- MIR regression test
-- Rebased through upstream review
+- MIR regression coverage
+- Rebase and upstream review iteration
 
 Status: "OPEN · REVIEWER APPROVED ◉"
 
-"View PR #210583 →" (https://github.com/llvm/llvm-project/pull/210583)
+"PR #210583 →" (https://github.com/llvm/llvm-project/pull/210583)
 
 </td>
 </tr><tr>
 <td width="50%" valign="top">QEMU · x86_64
 
-Virtualization / ISA Validation
+Virtualization · ISA Validation
 
-Validated the fix for incorrect long-mode handling of legacy segment override prefixes.
+Independently validated a fix for incorrect long-mode handling of legacy segment override prefixes.
 
 Contribution
 
-- Independent regression validation
+- Regression validation
 - Upstream testing feedback
-- Permanent upstream credit
+- Permanent upstream testing credit
 
 Status: "MERGED UPSTREAM ✓"
 
 "Tested-by: Yudistira Putra"
 
-"View upstream commit →" (https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a)
+"Upstream commit →" (https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a)
 
 </td><td width="50%" valign="top">bitcoin-core · secp256k1
 
@@ -96,14 +101,15 @@ Missing constant-time test coverage around "schnorrsig_sign_custom".
 
 Contribution
 
-- Expanded "ctime_tests.c"
+- Extended "ctime_tests.c"
 - Custom nonce callback coverage
-- Auxiliary-data and variable-message coverage
+- Auxiliary-data coverage
+- Variable-message coverage
 - Valgrind / CHECKMEM validation
 
 Status: "UNDER REVIEW ◉"
 
-"View PR #1893 →" (https://github.com/bitcoin-core/secp256k1/pull/1893)
+"PR #1893 →" (https://github.com/bitcoin-core/secp256k1/pull/1893)
 
 </td>
 </tr><tr>
@@ -121,13 +127,13 @@ Contribution
 
 Status: "OPEN · AWAITING REVIEW ○"
 
-"View PR #423 →" (https://github.com/riscv-software-src/opensbi/pull/423)
+"PR #423 →" (https://github.com/riscv-software-src/opensbi/pull/423)
 
 </td><td width="50%" valign="top">Linux
 
-Kernel Project · Tracing
+Tracing / ftrace
 
-Small upstream cleanups in tracing/ftrace documentation and samples.
+Small upstream cleanups in Linux tracing documentation and samples.
 
 Contribution
 
@@ -144,31 +150,33 @@ Status: "MERGED ×2 ✓"
 
 "> ls flagship/"
 
+Flagship Engineering Projects
+
 <table>
 <tr>
 <td width="50%" valign="top">"ecc-audit-engine" (https://github.com/Yudis-bit/ecc-audit-engine)
 
 Cryptographic differential-testing infrastructure
 
-A Rust-based research engine for reproducible investigation of secp256k1 implementations.
+A research-oriented engine for reproducible investigation of secp256k1 implementations.
 
 deterministic corpus
-      ↓
+        ↓
 target execution
-      ↓
+        ↓
 behavior comparison
-      ↓
+        ↓
 failure detection
-      ↓
+        ↓
 minimization
-      ↓
+        ↓
 replay + report
 
 Engineering focus
 
 - Differential testing
-- Synthetic corrupted targets
 - Deterministic reproduction
+- Synthetic corrupted targets
 - Failure minimization
 - Structured reporting
 - CI-backed regression coverage
@@ -182,24 +190,24 @@ Engineering focus
 
 Local-first security review infrastructure
 
-Tooling for producing structured and reproducible security evidence without requiring sensitive repositories to leave the local environment.
+Infrastructure for creating structured and reproducible security evidence without requiring sensitive repositories to leave the local environment.
 
 source / findings
-       ↓
+        ↓
 deterministic evidence
-       ↓
+        ↓
 portable review pack
-       ↓
+        ↓
 offline inspection
 
 Engineering focus
 
 - Deterministic fixtures
-- Local-first workflows
 - Evidence packaging
+- Local-first workflows
 - Reproducibility
 - Privacy-preserving output
-- Extensive automated testing
+- Automated testing
 
 44 releases · CI-backed
 
@@ -214,40 +222,40 @@ Engineering focus
 Engineering Case Files
 
 <details>
-<summary><b>01 / Vulkan Validation Layers — Out-of-Bounds Crash</b></summary><br>SYMPTOM
-  validation path crashes on malformed pipeline state
+<summary><b>01 / Vulkan Validation Layers — Out-of-Bounds Crash</b></summary><br/>SYMPTOM
+validation path crashes on malformed pipeline state
 
         ↓
 
 INVESTIGATION
-  trace descriptor validation execution
+trace descriptor validation execution
 
         ↓
 
 ROOT CAUSE
-  unsafe static descriptor validation path
-  reaches an out-of-bounds access
+unsafe static descriptor validation path
+reaches an out-of-bounds access
 
         ↓
 
 FIX
-  terminate safely before invalid state is consumed
+terminate safely before invalid state is consumed
 
         ↓
 
 VERIFICATION
-  dedicated C++ regression coverage
+dedicated C++ regression coverage
 
         ↓
 
 UPSTREAM
-  KhronosGroup/Vulkan-ValidationLayers
-  MERGED ✓
+KhronosGroup/Vulkan-ValidationLayers
+MERGED ✓
 
-"Read the full case study →" (https://github.com/Yudis-bit/opencode/blob/main/case-studies/vulkan-validation-crash-fix.md)
+"Read full case study →" (https://github.com/Yudis-bit/opencode/blob/main/case-studies/vulkan-validation-crash-fix.md)
 
-</details><details>
-<summary><b>02 / QEMU x86_64 — Segment Prefix Regression Validation</b></summary><br>Independent validation of an x86_64 long-mode decoding fix involving legacy segment override prefixes.
+</details><br/><details>
+<summary><b>02 / QEMU x86_64 — Segment Prefix Regression Validation</b></summary><br/>Independent validation of an x86_64 long-mode decoding fix involving legacy segment override prefixes.
 
 The resulting upstream QEMU commit permanently records:
 
@@ -257,8 +265,8 @@ This work focused on behavioral validation and regression confidence, not author
 
 "View upstream commit →" (https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a)
 
-</details><details>
-<summary><b>03 / ECC Differential Testing</b></summary><br>"ecc-audit-engine" explores reproducible techniques for comparing cryptographic implementations, constructing controlled failure cases, minimizing mismatches, and producing replayable evidence.
+</details><br/><details>
+<summary><b>03 / ECC Differential Testing</b></summary><br/>"ecc-audit-engine" explores reproducible techniques for comparing cryptographic implementations, constructing controlled failure cases, minimizing mismatches, and producing replayable evidence.
 
 generate
    ↓
@@ -282,22 +290,22 @@ replay
 "C++" (https://img.shields.io/badge/C%2B%2B-Systems-24292f?style=flat-square&logo=cplusplus&logoColor=white)
 "Rust" (https://img.shields.io/badge/Rust-Systems-24292f?style=flat-square&logo=rust&logoColor=white)
 "LLVM" (https://img.shields.io/badge/LLVM-Compiler-24292f?style=flat-square&logo=llvm&logoColor=white)
-"Vulkan" (https://img.shields.io/badge/Vulkan-GPU_Validation-24292f?style=flat-square&logo=vulkan&logoColor=white)
+"Vulkan" (https://img.shields.io/badge/Vulkan-GPU-24292f?style=flat-square&logo=vulkan&logoColor=white)
 "QEMU" (https://img.shields.io/badge/QEMU-Virtualization-24292f?style=flat-square)
 "RISC-V" (https://img.shields.io/badge/RISC--V-Firmware-24292f?style=flat-square&logo=riscv&logoColor=white)
 "Linux" (https://img.shields.io/badge/Linux-Systems-24292f?style=flat-square&logo=linux&logoColor=white)
-"Git" (https://img.shields.io/badge/Git-Upstream_Workflow-24292f?style=flat-square&logo=git&logoColor=white)
+"Git" (https://img.shields.io/badge/Git-Upstream-24292f?style=flat-square&logo=git&logoColor=white)
 
-</div>Areas I care about
+</div>Technical Focus
 
-┌──────────────────────┬────────────────────────┐
-│ Compilers            │ correctness / backend  │
-│ GPU / Graphics       │ validation / debugging │
-│ Virtualization       │ ISA / x86 behavior     │
-│ Firmware             │ memory safety / RISC-V │
-│ Cryptographic code   │ differential testing   │
-│ Regression systems   │ reproduction / CI      │
-└──────────────────────┴────────────────────────┘
+┌──────────────────────┬──────────────────────────┐
+│ Compilers            │ correctness / backends   │
+│ GPU / Graphics       │ validation / debugging   │
+│ Virtualization       │ ISA / x86 behavior       │
+│ Firmware             │ bounds safety / RISC-V   │
+│ Cryptographic code   │ differential testing     │
+│ Regression systems   │ reproduction / CI        │
+└──────────────────────┴──────────────────────────┘
 
 ---
 
@@ -314,11 +322,9 @@ Current Focus
 
 ---
 
-"> git log --upstream"
+"> methodology"
 
-Contribution Philosophy
-
-I prefer small, reviewable changes backed by reproducible evidence.
+How I Approach Systems Bugs
 
 observe
    │
@@ -340,6 +346,8 @@ regression test
    ▼
 upstream review
 
+I prefer small, reviewable changes backed by reproducible evidence.
+
 The goal is not simply to make a failure disappear.
 
 The goal is to understand why it happened, demonstrate the failure reliably, and leave behind coverage that makes the same class of regression harder to reintroduce.
@@ -348,13 +356,25 @@ The goal is to understand why it happened, demonstrate the failure reliably, and
 
 "> github --activity"
 
-<div align="center"><img height="165" src="https://github-readme-stats.vercel.app/api?username=Yudis-bit&show_icons=true&hide_border=true&bg_color=00000000&title_color=58A6FF&text_color=8B949E&icon_color=58A6FF&include_all_commits=true&count_private=true" /><img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&hide_border=true&bg_color=00000000&title_color=58A6FF&text_color=8B949E&langs_count=8" /></div>---
+<div align="center"><img
+height="165"
+src="https://github-readme-stats.vercel.app/api?username=Yudis-bit&show_icons=true&hide_border=true&bg_color=00000000&title_color=58A6FF&text_color=8B949E&icon_color=58A6FF&include_all_commits=true&count_private=true"
+alt="GitHub Stats"
+/>
+
+<img
+height="165"
+src="https://github-readme-stats.vercel.app/api/top-langs/?username=Yudis-bit&layout=compact&hide_border=true&bg_color=00000000&title_color=58A6FF&text_color=8B949E&langs_count=8"
+alt="Top Languages"
+/>
+
+</div>---
 
 "> status --availability"
 
 Open to Engineering Opportunities
 
-I'm interested in full-time, contract, and scoped engineering work involving:
+I'm interested in full-time, contract, and scoped engineering opportunities involving:
 
 - Systems software
 - Low-level C / C++ / Rust
@@ -385,6 +405,6 @@ upstream.
 
 █
 
-<sub>Systems · Compilers · GPU · Virtualization · Firmware · Cryptographic Software</sub>
-
-</div>
+<sub>
+Systems · Compilers · GPU · Virtualization · Firmware · Cryptographic Software
+</sub></div>

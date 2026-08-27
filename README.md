@@ -59,13 +59,13 @@ I currently work primarily with **C, C++, and Rust** across compiler backends, G
 | Project | Area | Contribution | Upstream State |
 |:---|:---|:---|:---:|
 | [**Khronos Vulkan Validation Layers**](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) | GPU Validation · C++ | Fixed an out-of-bounds crash in static descriptor validation and added regression coverage | `MERGED ✓` |
-| [**LLVM · AMDGPU**](https://github.com/llvm/llvm-project/pull/210583) | Compiler Backend · C++ / MIR | Prevented TFE/LWE image loads from entering invalid `SILoadStoreOptimizer` merge candidates | `OPEN · REVIEWER APPROVED ◉` |
+| [**LLVM · AMDGPU**](https://github.com/llvm/llvm-project/pull/210583) | Compiler Backend · C++ / MIR | Prevented TFE/LWE image loads from entering invalid `SILoadStoreOptimizer` merge candidates | `MERGED ✓` |
 | [**QEMU · x86_64**](https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a) | Virtualization · ISA Validation | Independently validated the x86 long-mode segment-prefix decoding fix | `MERGED · TESTED-BY ✓` |
 | [**bitcoin-core/secp256k1**](https://github.com/bitcoin-core/secp256k1/pull/1893) | Cryptographic Software · C | Extended constant-time test coverage for `schnorrsig_sign_custom` | `OPEN · UNDER REVIEW ◉` |
 | [**OpenSBI**](https://github.com/riscv-software-src/opensbi/pull/423) | RISC-V Firmware · C | Proposed a bounded copy for RPMSI shared-memory queue names at the fixed firmware buffer boundary | `OPEN · AWAITING REVIEW ○` |
 | **Linux · tracing / ftrace** | Kernel Documentation / Samples | Two small upstream documentation and sample cleanups — [e5d8524](https://github.com/torvalds/linux/commit/e5d8524) · [8a66c09](https://github.com/torvalds/linux/commit/8a66c09) | `MERGED ×2 ✓` |
 
-<sub>Upstream states last reviewed: 22 August 2026.</sub>
+<sub>Upstream states last reviewed: 27 August 2026.</sub>
 
 ---
 
@@ -119,11 +119,12 @@ TFE/LWE image loads require semantics that make certain load combinations unsafe
 - Iterated on AMDGPU review feedback
 - Rebased the patch against upstream
 - Received reviewer approval / LGTM
-- PR remains open pending the remaining upstream review path
+- Passed upstream CI
+- Landed in `llvm:main`
 
 <p>
 <a href="https://github.com/llvm/llvm-project/pull/210583">
-  <img src="https://img.shields.io/badge/View_PR-%23210583-58A6FF?style=for-the-badge&logo=github&logoColor=white" alt="LLVM PR">
+  <img src="https://img.shields.io/badge/View_PR-%23210583-238636?style=for-the-badge&logo=github&logoColor=white" alt="LLVM PR">
 </a>
 </p>
 

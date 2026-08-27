@@ -52,6 +52,48 @@ I currently work primarily with **C, C++, and Rust** across compiler backends, G
 
 ---
 
+## Engineering Snapshot
+
+A compact view of the engineering work represented across this profile.
+
+| System | Layer | Problem Class | Engineering Artifact | State |
+|:---|:---|:---|:---|:---:|
+| **LLVM / AMDGPU** | Compiler backend | Unsafe image-load merge candidate involving TFE/LWE result semantics | C++ fix + MIR regression coverage | `LANDED` |
+| **Vulkan Validation Layers** | GPU validation | Out-of-bounds descriptor access during static validation | C++ guard + regression coverage | `LANDED` |
+| **QEMU / x86_64** | Virtualization / ISA | Long-mode segment-prefix decoding correctness | Independent emulator validation | `TESTED-BY` |
+| **secp256k1** | Cryptographic software | Constant-time coverage gap | C test-coverage extension | `OPEN` |
+| **OpenSBI** | RISC-V firmware | Fixed-buffer boundary handling | Bounded-copy patch | `OPEN` |
+| **Linux / ftrace** | Kernel tooling | Documentation / sample correctness | Focused upstream cleanups | `LANDED ×2` |
+| **Code4rena / Swafe** | Protocol security | Replayable authenticated recovery state | Security analysis + reproducible finding | `M-04 CO-FINDER` |
+
+The systems are different.
+
+The engineering questions are often the same:
+
+```text
+What assumption is being made?
+            │
+            ▼
+Where is that assumption enforced?
+            │
+            ▼
+What happens at the boundary?
+            │
+            ▼
+Can the failure be reproduced?
+            │
+            ▼
+Can the cause be reduced?
+            │
+            ▼
+Can the correction be made narrowly?
+            │
+            ▼
+What evidence prevents regression?
+```
+
+---
+
 ## Verified Upstream Engineering
 
 > Production codebases. Reproducible failures. Reviewable changes.
@@ -61,7 +103,7 @@ I currently work primarily with **C, C++, and Rust** across compiler backends, G
 | [**Khronos Vulkan Validation Layers**](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) | GPU Validation · C++ | Fixed an out-of-bounds crash in static descriptor validation and added regression coverage | `MERGED ✓` |
 | [**LLVM · AMDGPU**](https://github.com/llvm/llvm-project/pull/210583) | Compiler Backend · C++ / MIR | Prevented TFE/LWE image loads from entering invalid `SILoadStoreOptimizer` merge candidates | `MERGED ✓` |
 | [**QEMU · x86_64**](https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a) | Virtualization · ISA Validation | Independently validated the x86 long-mode segment-prefix decoding fix | `MERGED · TESTED-BY ✓` |
-| [**bitcoin-core/secp256k1**](https://github.com/bitcoin-core/secp256k1/pull/1893) | Cryptographic Software · C | Extended constant-time test coverage for `schnorrsig_sign_custom` | `OPEN · UNDER REVIEW ◉` |
+| [**bitcoin-core/secp256k1**](https://github.com/bitcoin-core/secp256k1/pull/1893) | Cryptographic Software · C | Extended constant-time test coverage for `schnorrsig_sign_custom` | `OPEN · REVIEW COMMENTS ◉` |
 | [**OpenSBI**](https://github.com/riscv-software-src/opensbi/pull/423) | RISC-V Firmware · C | Proposed a bounded copy for RPMSI shared-memory queue names at the fixed firmware buffer boundary | `OPEN · AWAITING REVIEW ○` |
 | **Linux · tracing / ftrace** | Kernel Documentation / Samples | Two small upstream documentation and sample cleanups — [e5d8524](https://github.com/torvalds/linux/commit/e5d8524) · [8a66c09](https://github.com/torvalds/linux/commit/8a66c09) | `MERGED ×2 ✓` |
 
@@ -84,6 +126,27 @@ binding.descriptors[index]
 ```
 
 with an out-of-range `index`.
+
+### Failure path
+
+```text
+shader-declared descriptor array
+              │
+              ▼
+pipeline-layout binding count
+              │
+              ▼
+           mismatch
+              │
+              ▼
+static descriptor validation
+              │
+              ▼
+binding.descriptors[index]
+              │
+              ▼
+        out-of-range access
+```
 
 **Contribution**
 
@@ -110,16 +173,41 @@ with an out-of-range `index`.
 
 **`SILoadStoreOptimizer` image-load merge correctness**
 
-TFE/LWE image loads require semantics that make certain load combinations unsafe to treat as ordinary merge candidates.
+TFE/LWE image loads carry additional status-result semantics.
+
+The image-load merge path cannot safely reconstruct those status lanes, which means such instructions should never become ordinary merge candidates.
+
+### Failure boundary
+
+```text
+MIMG instruction
+      │
+      ├── ordinary image load
+      │        │
+      │        └── eligible for merge analysis
+      │
+      └── TFE / LWE image load
+               │
+               └── additional status-result semantics
+                            │
+                            ▼
+                  merge path cannot preserve
+                  the required result shape
+                            │
+                            ▼
+                     reject before
+                  candidate collection
+```
 
 **Contribution**
 
-- Added a guard rejecting invalid TFE/LWE image-load merge candidates
+- Added a guard rejecting TFE/LWE image loads before merge-candidate collection
+- Covered the asymmetric ordinary → TFE/LWE failure ordering
 - Added MIR-level regression coverage
-- Iterated on AMDGPU review feedback
-- Rebased the patch against upstream
-- Received reviewer approval / LGTM
-- Passed upstream CI
+- Preserved existing status-free positive merge behavior
+- Iterated on AMDGPU reviewer feedback
+- Rebased against upstream during review
+- Passed focused LLVM lit coverage and upstream CI
 - Landed in `llvm:main`
 
 <p>
@@ -136,6 +224,8 @@ TFE/LWE image loads require semantics that make certain load combinations unsafe
 
 I independently tested an upstream fix for x86 long-mode handling of legacy segment override prefixes.
 
+The work focused on validating whether emulator behavior matched the expected architectural semantics.
+
 The final QEMU commit permanently records:
 
 ```text
@@ -144,11 +234,90 @@ Tested-by: Yudistira Putra
 
 This is **independent testing and validation credit**, not authorship of the underlying patch.
 
+I keep that distinction explicit because authorship and independent validation are different engineering contributions.
+
 <p>
 <a href="https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a">
   <img src="https://img.shields.io/badge/QEMU-Upstream_Commit-FF6600?style=for-the-badge&logo=github&logoColor=white" alt="QEMU Commit">
 </a>
 </p>
+
+---
+
+## Failure → Fix → Evidence
+
+I prefer work that can be reduced to a verifiable chain.
+
+```text
+unexpected behavior
+        │
+        ▼
+reproducer
+        │
+        ▼
+reduced failure
+        │
+        ▼
+root-cause boundary
+        │
+        ▼
+narrow correction
+        │
+        ▼
+regression artifact
+        │
+        ▼
+review
+        │
+        ▼
+upstream result
+```
+
+A code change by itself is weak evidence.
+
+A change becomes more useful when another engineer can inspect:
+
+- what failed
+- how to reproduce it
+- which invariant was violated
+- why the correction is scoped correctly
+- what regression coverage preserves the behavior
+- what happened during upstream review
+
+This is the standard I try to apply whether the target is a compiler backend, validation layer, emulator, firmware component, cryptographic library, or protocol state machine.
+
+---
+
+## Technical Surface Area
+
+My current work spans several layers of the software stack.
+
+```text
+┌───────────────────────────────────────────────────────────────┐
+│                  SECURITY-CRITICAL PROTOCOLS                  │
+│          invariants · freshness · state transitions           │
+├───────────────────────────────────────────────────────────────┤
+│                    CRYPTOGRAPHIC SOFTWARE                     │
+│       secp256k1 · constant-time testing · differential tests  │
+├───────────────────────────────────────────────────────────────┤
+│                  COMPILER / MACHINE BACKEND                   │
+│            LLVM · AMDGPU · MIR · machine transforms           │
+├───────────────────────────────────────────────────────────────┤
+│                     GPU VALIDATION LAYER                      │
+│        Vulkan · descriptor state · pipeline correctness       │
+├───────────────────────────────────────────────────────────────┤
+│                    VIRTUALIZATION / ISA                       │
+│             QEMU · x86_64 · decoder validation                │
+├───────────────────────────────────────────────────────────────┤
+│                           FIRMWARE                            │
+│              OpenSBI · RISC-V · fixed boundaries              │
+├───────────────────────────────────────────────────────────────┤
+│                     KERNEL / TOOLING                          │
+│                 Linux · tracing · ftrace                      │
+└───────────────────────────────────────────────────────────────┘
+```
+
+Across those layers, I am primarily interested in places where correctness depends on subtle assumptions that are easy to miss during normal execution.
 
 ---
 
@@ -247,6 +416,55 @@ human review required
 
 ---
 
+## Small Systems Tools
+
+Not every useful engineering artifact needs to become a large framework.
+
+### [`bitpeek`](https://github.com/Yudis-bit/bitpeek)
+
+**Local-first byte inspector**
+
+A small browser utility for inspecting raw byte representations without sending data to a backend.
+
+```text
+DE AD BE EF
+     │
+     ├── hex
+     ├── binary
+     ├── ASCII / UTF-8
+     ├── signed integer
+     ├── unsigned integer
+     ├── big endian
+     ├── little endian
+     └── individual bits
+```
+
+Core behavior:
+
+- Hex, binary, decimal-byte, and UTF-8 input
+- Byte-range selection
+- Signed and unsigned integer interpretation
+- Big-endian and little-endian interpretation
+- Interactive bit mutation
+- Exact handling of 64-bit integer values
+- Fully client-side execution
+- No backend and no uploads
+
+<p>
+<a href="https://bitpeek-seven.vercel.app/">
+  <img src="https://img.shields.io/badge/Live-bitpeek-238636?style=for-the-badge" alt="bitpeek live">
+</a>
+<a href="https://github.com/Yudis-bit/bitpeek">
+  <img src="https://img.shields.io/badge/Source-bitpeek-181717?style=for-the-badge&logo=github&logoColor=white" alt="bitpeek source">
+</a>
+</p>
+
+Its scope is intentionally narrow:
+
+> Paste bytes. Inspect what they mean under a specific representation.
+
+---
+
 ## Competitive Security Research
 
 <div align="center">
@@ -301,6 +519,25 @@ Code4rena's mitigation review later marked **M-04 as mitigated**.
 
 ---
 
+## Engineering Evidence
+
+Claims on this profile are intentionally linked to primary engineering artifacts.
+
+| Work | Primary Evidence |
+|:---|:---|
+| **LLVM / AMDGPU backend fix** | [llvm-project #210583](https://github.com/llvm/llvm-project/pull/210583) |
+| **Vulkan validation crash fix** | [Vulkan-ValidationLayers #12743](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) |
+| **QEMU independent validation** | [QEMU commit 3589cd9](https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a) |
+| **secp256k1 constant-time coverage** | [secp256k1 #1893](https://github.com/bitcoin-core/secp256k1/pull/1893) |
+| **OpenSBI buffer-boundary patch** | [OpenSBI #423](https://github.com/riscv-software-src/opensbi/pull/423) |
+| **Linux upstream work** | [e5d8524](https://github.com/torvalds/linux/commit/e5d8524) · [8a66c09](https://github.com/torvalds/linux/commit/8a66c09) |
+| **Competitive security finding** | [Code4rena S-855](https://code4rena.com/audits/2025-11-swafe/submissions/S-855) |
+| **Differential-testing infrastructure** | [ecc-audit-engine](https://github.com/Yudis-bit/ecc-audit-engine) |
+| **Local-first review infrastructure** | [ArkheionX](https://github.com/Yudis-bit/arkheionx) |
+| **Byte-inspection utility** | [bitpeek](https://github.com/Yudis-bit/bitpeek) |
+
+---
+
 ## How I Debug
 
 ```text
@@ -312,7 +549,7 @@ REDUCE
    ↓
 UNDERSTAND
    ↓
-PATCH
+PATCH / VALIDATE
    ↓
 REGRESSION TEST
    ↓
@@ -321,7 +558,48 @@ UPSTREAM REVIEW
 
 I prefer **small, reviewable changes backed by reproducible evidence**.
 
-The goal is not simply to make a failure disappear. The goal is to understand **why it happened**, demonstrate the failure reliably, and leave behind coverage that makes the same class of regression harder to reintroduce.
+The goal is not simply to make a failure disappear.
+
+The goal is to understand **why it happened**, demonstrate the failure reliably, identify the violated invariant or boundary, and leave behind evidence that makes the same class of regression harder to reintroduce.
+
+---
+
+## Review Discipline
+
+Before considering a correctness change complete, I generally want to answer:
+
+```text
+Can I reproduce the failure?
+        │
+        ├── no  → evidence is incomplete
+        │
+        └── yes
+              │
+              ▼
+Can I reduce the triggering case?
+        │
+        ├── no  → continue isolating
+        │
+        └── yes
+              │
+              ▼
+Do I understand the violated invariant?
+        │
+        ├── no  → continue investigating
+        │
+        └── yes
+              │
+              ▼
+Can the correction stay narrowly scoped?
+        │
+        ▼
+Can a regression artifact preserve the behavior?
+        │
+        ▼
+Submit for review
+```
+
+This matters in systems code because a locally plausible fix can still violate assumptions in another layer.
 
 ---
 
@@ -330,13 +608,74 @@ The goal is not simply to make a failure disappear. The goal is to understand **
 | Domain | Current Engineering Focus |
 |:---|:---|
 | **Compilers** | LLVM backend correctness · machine-level optimization · MIR regression testing |
-| **GPU / Graphics** | Vulkan validation · crash debugging · boundary correctness |
+| **GPU / Graphics** | Vulkan validation · crash debugging · descriptor and pipeline boundary correctness |
 | **Virtualization** | QEMU · x86_64 ISA behavior · instruction-decoder validation |
 | **Firmware** | RISC-V · OpenSBI · fixed-buffer and boundary safety |
 | **Cryptographic Software** | secp256k1 · constant-time testing · differential testing |
-| **Regression Infrastructure** | reproduction · minimization · replay · CI |
-| **Security-Critical Software** | invariants · state transitions · replay protection |
+| **Regression Infrastructure** | reproduction · minimization · deterministic replay · CI |
+| **Security-Critical Software** | invariants · state transitions · freshness · replay protection |
 | **Open Source** | focused fixes · regression coverage · review iteration · independent validation |
+
+---
+
+## Current Engineering Direction
+
+### Compiler correctness
+
+- Machine-level transformations
+- Backend optimization
+- MIR-based regression testing
+- Cases where an optimization is structurally legal but semantically unsafe
+
+### GPU infrastructure
+
+- Validation-layer behavior
+- Pipeline and descriptor state
+- Boundary-condition crashes
+- Safe handling of invalid application state
+
+### Architecture and virtualization
+
+- ISA semantics
+- Instruction decoding
+- Hardware / emulator behavior
+- Small architectural edge cases with downstream effects
+
+### Cryptographic software
+
+- Constant-time test coverage
+- Differential testing
+- Deterministic corpora
+- Failure minimization
+- Reproducible evidence
+
+### Security-critical state machines
+
+- Freshness
+- Replay resistance
+- State-transition invariants
+- Evidence-driven protocol review
+
+---
+
+## Engineering Priorities
+
+The properties I optimize for are straightforward:
+
+```text
+correctness
+reproducibility
+reviewability
+evidence
+regression resistance
+```
+
+A useful engineering artifact should make it possible for another engineer to independently inspect both:
+
+1. **what failed**
+2. **why the proposed correction is sufficient**
+
+That standard applies whether the target is a compiler backend, validation layer, emulator, firmware component, cryptographic library, or protocol.
 
 ---
 

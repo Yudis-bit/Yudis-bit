@@ -61,8 +61,9 @@ A compact view of the engineering work represented across this profile.
 | **LLVM / AMDGPU** | Compiler backend | Unsafe image-load merge candidate involving TFE/LWE result semantics | C++ fix + MIR regression coverage | `LANDED` |
 | **Vulkan Validation Layers** | GPU validation | Out-of-bounds descriptor access during static validation | C++ guard + regression coverage | `LANDED` |
 | **QEMU / x86_64** | Virtualization / ISA | Long-mode segment-prefix decoding correctness | Independent emulator validation | `TESTED-BY` |
+| **OpenSBI · SBI ecall** | RISC-V firmware | Extension-list buffer could advance past caller-provided capacity | C bounds guard + SBIUNIT redzone regression | `LANDED` |
+| **OpenSBI · RPMI mailbox** | RISC-V firmware | Fixed-size queue-name buffer boundary | Bounded-copy patch | `OPEN` |
 | **secp256k1** | Cryptographic software | Constant-time coverage gap | C test-coverage extension | `OPEN` |
-| **OpenSBI** | RISC-V firmware | Fixed-buffer boundary handling | Bounded-copy patch | `OPEN` |
 | **Linux / ftrace** | Kernel tooling | Documentation / sample correctness | Focused upstream cleanups | `LANDED ×2` |
 | **Code4rena / Swafe** | Protocol security | Replayable authenticated recovery state | Security analysis + reproducible finding | `M-04 CO-FINDER` |
 
@@ -102,12 +103,13 @@ What evidence prevents regression?
 |:---|:---|:---|:---:|
 | [**Khronos Vulkan Validation Layers**](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) | GPU Validation · C++ | Fixed an out-of-bounds crash in static descriptor validation and added regression coverage | `MERGED ✓` |
 | [**LLVM · AMDGPU**](https://github.com/llvm/llvm-project/pull/210583) | Compiler Backend · C++ / MIR | Prevented TFE/LWE image loads from entering invalid `SILoadStoreOptimizer` merge candidates | `MERGED ✓` |
+| [**OpenSBI · SBI ecall**](https://github.com/riscv-software-src/opensbi/commit/f95648d3955d72f77e13315a990a6135303978a5) | RISC-V Firmware · C / SBIUNIT | Fixed an out-of-bounds write in `sbi_ecall_get_extensions_str()` and added redzone regression coverage | `MERGED ✓` |
 | [**QEMU · x86_64**](https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a) | Virtualization · ISA Validation | Independently validated the x86 long-mode segment-prefix decoding fix | `MERGED · TESTED-BY ✓` |
 | [**bitcoin-core/secp256k1**](https://github.com/bitcoin-core/secp256k1/pull/1893) | Cryptographic Software · C | Extended constant-time test coverage for `schnorrsig_sign_custom` | `OPEN · REVIEW COMMENTS ◉` |
-| [**OpenSBI**](https://github.com/riscv-software-src/opensbi/pull/423) | RISC-V Firmware · C | Proposed a bounded copy for RPMSI shared-memory queue names at the fixed firmware buffer boundary | `OPEN · AWAITING REVIEW ○` |
+| [**OpenSBI · RPMI mailbox**](https://github.com/riscv-software-src/opensbi/pull/423) | RISC-V Firmware · C | Proposed bounded handling for RPMSI shared-memory queue names at the fixed firmware buffer boundary | `OPEN · AWAITING REVIEW ○` |
 | **Linux · tracing / ftrace** | Kernel Documentation / Samples | Two small upstream documentation and sample cleanups — [e5d8524](https://github.com/torvalds/linux/commit/e5d8524) · [8a66c09](https://github.com/torvalds/linux/commit/8a66c09) | `MERGED ×2 ✓` |
 
-<sub>Upstream states last reviewed: 27 August 2026.</sub>
+<sub>Upstream states last reviewed: 31 August 2026.</sub>
 
 ---
 
@@ -244,6 +246,58 @@ I keep that distinction explicit because authorship and independent validation a
 
 ---
 
+### 04 · OpenSBI · RISC-V
+
+**Caller-buffer boundary handling in `sbi_ecall_get_extensions_str()`**
+
+The extension-string helper advanced its offset using the nominal extension-name length without first ensuring that the next entry would fit in the caller-provided buffer.
+
+With a sufficiently small destination, the offset could move beyond `exts_str_size`, making the remaining-size calculation invalid and potentially allowing an out-of-bounds write.
+
+### Failure boundary
+
+```text
+registered SBI extensions
+          │
+          ▼
+caller-provided buffer
+          │
+          ▼
+next extension does not fit
+          │
+          ▼
+offset advances past capacity
+          │
+          ▼
+invalid remaining-size calculation
+          │
+          ▼
+potential out-of-bounds write
+```
+
+**Contribution**
+
+- Identified the caller-buffer boundary failure
+- Added a guard before appending the next extension name
+- Added SBIUNIT regression coverage
+- Used a 16-byte destination with a redzone to detect writes past the supplied boundary
+- Added a larger-buffer control case
+- Iterated through upstream review
+- Reviewed by Anup Patel
+- Landed in OpenSBI `master`
+- Closed upstream issue #416
+
+<p>
+<a href="https://github.com/riscv-software-src/opensbi/commit/f95648d3955d72f77e13315a990a6135303978a5">
+  <img src="https://img.shields.io/badge/OpenSBI-Upstream_Commit-238636?style=for-the-badge&logo=github&logoColor=white" alt="OpenSBI Commit">
+</a>
+<a href="https://lore.kernel.org/r/20260719101125.190314-1-pyudistira519@gmail.com">
+  <img src="https://img.shields.io/badge/lore.kernel.org-Patch_Thread-58A6FF?style=for-the-badge" alt="OpenSBI lore thread">
+</a>
+</p>
+
+---
+
 ## Failure → Fix → Evidence
 
 I prefer work that can be reduced to a verifiable chain.
@@ -310,7 +364,7 @@ My current work spans several layers of the software stack.
 │             QEMU · x86_64 · decoder validation                │
 ├───────────────────────────────────────────────────────────────┤
 │                           FIRMWARE                            │
-│              OpenSBI · RISC-V · fixed boundaries              │
+│       OpenSBI · RISC-V · caller buffers · fixed boundaries    │
 ├───────────────────────────────────────────────────────────────┤
 │                     KERNEL / TOOLING                          │
 │                 Linux · tracing · ftrace                      │
@@ -527,9 +581,10 @@ Claims on this profile are intentionally linked to primary engineering artifacts
 |:---|:---|
 | **LLVM / AMDGPU backend fix** | [llvm-project #210583](https://github.com/llvm/llvm-project/pull/210583) |
 | **Vulkan validation crash fix** | [Vulkan-ValidationLayers #12743](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) |
+| **OpenSBI ecall buffer-boundary fix** | [Upstream commit f95648d](https://github.com/riscv-software-src/opensbi/commit/f95648d3955d72f77e13315a990a6135303978a5) |
 | **QEMU independent validation** | [QEMU commit 3589cd9](https://github.com/qemu/qemu/commit/3589cd995b4facf34071e944fd8ec2294524e25a) |
 | **secp256k1 constant-time coverage** | [secp256k1 #1893](https://github.com/bitcoin-core/secp256k1/pull/1893) |
-| **OpenSBI buffer-boundary patch** | [OpenSBI #423](https://github.com/riscv-software-src/opensbi/pull/423) |
+| **OpenSBI RPMI queue-name bounds patch** | [OpenSBI #423](https://github.com/riscv-software-src/opensbi/pull/423) |
 | **Linux upstream work** | [e5d8524](https://github.com/torvalds/linux/commit/e5d8524) · [8a66c09](https://github.com/torvalds/linux/commit/8a66c09) |
 | **Competitive security finding** | [Code4rena S-855](https://code4rena.com/audits/2025-11-swafe/submissions/S-855) |
 | **Differential-testing infrastructure** | [ecc-audit-engine](https://github.com/Yudis-bit/ecc-audit-engine) |
@@ -610,7 +665,7 @@ This matters in systems code because a locally plausible fix can still violate a
 | **Compilers** | LLVM backend correctness · machine-level optimization · MIR regression testing |
 | **GPU / Graphics** | Vulkan validation · crash debugging · descriptor and pipeline boundary correctness |
 | **Virtualization** | QEMU · x86_64 ISA behavior · instruction-decoder validation |
-| **Firmware** | RISC-V · OpenSBI · fixed-buffer and boundary safety |
+| **Firmware** | RISC-V · OpenSBI · caller-buffer and fixed-boundary safety |
 | **Cryptographic Software** | secp256k1 · constant-time testing · differential testing |
 | **Regression Infrastructure** | reproduction · minimization · deterministic replay · CI |
 | **Security-Critical Software** | invariants · state transitions · freshness · replay protection |
@@ -640,6 +695,13 @@ This matters in systems code because a locally plausible fix can still violate a
 - Instruction decoding
 - Hardware / emulator behavior
 - Small architectural edge cases with downstream effects
+
+### RISC-V firmware
+
+- Caller-provided buffer boundaries
+- Fixed-size firmware interfaces
+- SBI extension handling
+- Regression coverage for boundary conditions
 
 ### Cryptographic software
 

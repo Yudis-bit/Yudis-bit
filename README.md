@@ -24,7 +24,6 @@ I work where small mistakes become real failures: compiler backends, validation 
 |---|---|:---:|
 | [LLVM / AMDGPU](https://github.com/llvm/llvm-project/pull/210583) | Stopped TFE/LWE image loads from entering `SILoadStoreOptimizer` merge candidates; added MIR regressions. | `MERGED` |
 | [Vulkan Validation Layers](https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/12743) | Added a bounds guard to static descriptor validation, preventing an out-of-bounds access; added C++ regression coverage. | `MERGED` |
-| [heroiclabs / nakama](https://github.com/heroiclabs/nakama/pull/909) | Fixed tournament reset timer and session cleanup edge condition in distributed runtime. | `MERGED` |
 | [OpenSBI / SBI ecall](https://github.com/riscv-software-src/opensbi/commit/f95648d3955d72f77e13315a990a6135303978a5) | Bounded `sbi_ecall_get_extensions_str()` to caller capacity; added an SBIUNIT redzone test. | `MERGED` |
 | [bitcoin-core / secp256k1](https://github.com/bitcoin-core/secp256k1/pull/1893) | Added CHECKMEM coverage for `schnorrsig_sign_custom`, including a custom nonce callback. | `MERGED` |
 | [OpenSBI / RPMI](https://github.com/riscv-software-src/opensbi/pull/423) | Proposed bounded copying for fixed-size shared-memory queue names. | `OPEN` |

@@ -1,8 +1,10 @@
-# Yudistira Putra
+<img src="assets/systems-stack.svg" alt="Yudistira Putra — Systems software engineer. C, C++, Rust." width="100%">
 
-Systems software engineer. C, C++, Rust.
+I fix compiler and memory-safety bugs, work on QUIC and RISC-V firmware, and write constant-time tests for cryptographic code.
 
-| Upstream | Merged work |
+### Merged upstream
+
+| Project | Contribution |
 |---|---|
 | [LLVM / AMDGPU](https://github.com/llvm/llvm-project/pull/210583) | Blocked invalid TFE/LWE image-load merges; added MIR regression tests. |
 | [Microsoft / MsQuic](https://github.com/microsoft/msquic/pull/6320) | Fixed reversed header-protection sample copying when receive batches split. |
@@ -11,4 +13,4 @@ Systems software engineer. C, C++, Rust.
 | [OpenSBI](https://github.com/riscv-software-src/opensbi/commit/f95648d3955d72f77e13315a990a6135303978a5) | Bounded SBI extension-list writes to buffer capacity; added a redzone test. |
 | [Google / Kafel](https://github.com/google/kafel/pull/46) | Corrected the m68k `mseal` argument name from `size` to `flags`. |
 
-[Email](mailto:pyudistira519@gmail.com) / [LinkedIn](https://www.linkedin.com/in/yudistira-putra-dev/)
+**Get in touch** · [Email](mailto:pyudistira519@gmail.com) · [LinkedIn](https://www.linkedin.com/in/yudistira-putra-dev/)

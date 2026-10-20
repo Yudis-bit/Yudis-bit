@@ -3,7 +3,7 @@
   <img src="assets/systems-stack.svg" alt="Yudistira Putra. Systems software, from Indonesia. C, C++, Rust. Compilers, protocols, cryptography and firmware." width="100%">
 </picture>
 
-I am an OpenSats grantee and systems programmer based in Indonesia, working primarily in C, C++, and Rust on Bitcoin Core, libsecp256k1, zero-knowledge virtual machines, compilers, and security-critical firmware.
+I am a software developer based in Indonesia, working mostly in C, C++, and Rust on Bitcoin Core, libsecp256k1, zero-knowledge virtual machines, compilers, and security-critical firmware.
 
 I focus on correctness at the byte, register, and algebraic level: where boundary arithmetic overflows, where elliptic curve additions hit degenerate points at infinity, and which regression harness kills subtle mutants. I also build tools for inspecting binary structures, formal limb bounds, and replaying edge failures.
 
